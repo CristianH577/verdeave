@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 360px;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  padding-right: 0 !important;
+  overflow: initial !important;
+}
+
+.view-section {
+  padding-top: 4rem;
+}
