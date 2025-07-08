@@ -46,6 +46,7 @@ export default function BarraNavegacion() {
 
       <a
         href="#"
+        title="Ir al inicio"
         className="inline-flex items-center gap-1 text-emerald-200 font-semibold text-3xl drop-shadow-sm drop-shadow-black/60"
       >
         <Image width={48} height={48} />

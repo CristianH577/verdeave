@@ -34,10 +34,11 @@ export default function StackImgs({ id = "" }) {
     .filter(([path, _]) => path.includes("full/" + id))
     .map((src) => src[1]);
 
+  if (imgs.length < 1) return null;
+
   return (
     <AnimatePresence mode="wait">
       <article
-        role="wrapper"
         className="flex flex-col sm:flex-row gap-4 items-center my-2 py-6 pe-4 overflow-y-hidden"
         style={{
           overflowX: !isSmall && expanded ? "auto" : "hidden",
@@ -99,11 +100,13 @@ export default function StackImgs({ id = "" }) {
                     x: isSmall ? 0 : offset,
                     y: isSmall ? offset : 0,
                     rotate: rotate,
+                    display: i > 5 ? "none" : "block",
                   },
                   visible: {
                     opacity: expanded ? 1 : 1 - i * 0.2,
                     x: 0,
                     y: 0,
+                    display: "block",
                   },
                 }}
                 initial="hidden"

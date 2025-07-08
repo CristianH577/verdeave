@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
+
 import StackImgs from "./StackImgs";
+
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 export default function TabPanelServicio({
   id = "",
   textContent = <></>,
   listas = [{ label: "", items: [""] }],
+  linkExample = "",
 }) {
   return (
-    <section>
-      <div className="max-w-[600px] indent-2">
-        {textContent}
-        <br />
-      </div>
+    <section className="space-y-8">
+      <div className="max-w-[600px] indent-2">{textContent}</div>
 
       <article className="flex flex-wrap gap-8">
         {listas.map((list, i) => (
@@ -54,6 +55,19 @@ export default function TabPanelServicio({
           </div>
         ))}
       </article>
+
+      {linkExample && (
+        <a
+          href={linkExample}
+          title="Ver ejemplo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold hover:underline"
+        >
+          Ejemplo
+          <OpenInNewIcon fontSize="small" />
+        </a>
+      )}
 
       <StackImgs id={id} />
     </section>

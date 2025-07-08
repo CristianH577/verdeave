@@ -9,6 +9,7 @@ const items = [
   {
     id: "web",
     label: "Diseño web",
+    linkExample: "https://imanestucuman.com.ar/",
     textContent: (
       <p>
         Una sitio web es una gran forma de mostrar contenido y llegar al publico
@@ -65,6 +66,7 @@ const items = [
   {
     id: "catalogo",
     label: "Catalogo Online",
+    linkExample: "https://cata-log.netlify.app/",
     textContent: (
       <>
         <p>
@@ -130,7 +132,7 @@ const items = [
       {
         label: "Precio",
         items: [
-          "Basico final: $40.000",
+          "Basico: $45.000",
           "Adelanto de $5.000 y cancelación al finalizar",
           "Adicional si precisa algo mas de la lista de +Plus",
         ],
@@ -140,6 +142,7 @@ const items = [
   {
     id: "tienda",
     label: "Tienda Online",
+    linkExample: "https://imanestucuman.mercadoshops.com.ar/",
     textContent: (
       <>
         <p>
@@ -195,10 +198,67 @@ const items = [
       {
         label: "Precio",
         items: [
-          "Básico: $50.000",
+          "Básico: $55.000",
           "Adelanto de $10.000 y cancelación al finalizar",
           "Adicional si precisa algo mas de la lista de +Plus",
           "Tenga en cuenta que las tiendas tienen un coste mensual aparte",
+        ],
+      },
+    ],
+  },
+  {
+    id: "catalogo_pdf",
+    label: "Catalogo PDF",
+    linkExample:
+      "https://drive.google.com/drive/folders/1ueYmBFl4_3Y8Tb-BNmQnWAK2kSVLNRa_?usp=drive_link",
+    textContent: (
+      <>
+        <p>
+          Una opción rápida y económica para mostrar tener un muestrario de lo
+          que se ofrece con un sistema de búsqueda por texto.
+        </p>
+      </>
+    ),
+    listas: [
+      {
+        label: "Básico",
+        items: [
+          "Diseño básico",
+          "Portada básica",
+          "Índice",
+          "Contactos",
+          "Carga de hasta 35 artículos",
+          "Hasta 120 artículos rellenando un excel",
+          "Imágenes individuales de las paginas",
+          "Versión común, HD y OCR",
+        ],
+      },
+      {
+        label: "+Plus",
+        items: [
+          "Diseño personalizado",
+          "Limpiar fondo de imágenes",
+          "Revisión ortográfica",
+          "Paleta de colores personalizada",
+          "Diseño grafico",
+          "Paginas adicionales(aclaraciones, condiciones, FAQs, etc)",
+        ],
+      },
+      {
+        label: "Que necesita?",
+        items: [
+          "Datos de los artículos o rellenar un Excel",
+          "Una carpeta con las imágenes de los artículos",
+          "Los datos del negocio: nombre, dirección, redes, horarios, etc.",
+          "Esperar 1 a 3 días para diseñar el catalogo",
+        ],
+      },
+      {
+        label: "Precio",
+        items: [
+          "Básico: $20.000",
+          "Adelanto de $5.000 y cancelación al finalizar",
+          "Adicional si precisa algo mas de la lista de +Plus",
         ],
       },
     ],
@@ -216,7 +276,6 @@ export default function Servicios() {
 
       <article className="border-b border-neutral-400 overflow-x-auto pb-1">
         <motion.ul
-          role="tabs-wrapper"
           aria-label="pestañas de servicios"
           className="flex w-fit relative"
         >
@@ -225,7 +284,6 @@ export default function Servicios() {
               <Button
                 color="inherit"
                 size="large"
-                role="tab"
                 data-selected={i === value}
                 className="whitespace-nowrap data-[selected=true]:!font-semibold data-[selected=true]:text-shadow-md text-shadow-black/30"
                 onClick={() => setValue(i)}
@@ -246,7 +304,6 @@ export default function Servicios() {
       <AnimatePresence mode="wait">
         <motion.article
           key={value}
-          role="tabpanel"
           layoutId="content"
           className="py-4 sm:px-4"
           initial={{ x: "100%", opacity: 0 }}

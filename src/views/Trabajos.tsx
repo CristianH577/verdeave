@@ -104,7 +104,7 @@ export default function Trabajos() {
   return (
     <section id="trabajos" className="view-section">
       <motion.article
-        className="p-4 pt-8 grid grid-cols-[repeat(auto-fit,_minmax(220px,_260px))] gap-4 justify-center"
+        className="p-4 pt-8 grid gap-4 justify-center grid-cols-[repeat(auto-fit,_minmax(220px,_260px))]"
         variants={{
           visible: {
             transition: { delayChildren: 0.1, staggerChildren: 0.1 },

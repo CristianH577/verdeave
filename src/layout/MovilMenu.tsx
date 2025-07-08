@@ -32,10 +32,14 @@ export default function MovilMenu({ isOpen = false, setIsOpen }: Props) {
         paper: "w-full xs:!max-w-[220px] !bg-transparent backdrop-blur-lg ",
       }}
     >
-      <div className="inline-flex items-center gap-1 text-emerald-200 font-semibold text-3xl drop-shadow-sm drop-shadow-black/60 py-4 px-2">
+      <a
+        href="#"
+        title="Ir al inicio"
+        className="inline-flex items-center gap-1 text-emerald-200 font-semibold text-3xl drop-shadow-sm drop-shadow-black/60 py-4 px-2"
+      >
         <Image width={48} height={48} />
-        <span className="">VerdeAve</span>
-      </div>
+        VerdeAve
+      </a>
 
       <Divider variant="middle" className="bg-neutral-500" />
 

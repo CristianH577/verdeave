@@ -81,7 +81,7 @@ export default function Footer() {
               {LIKS_CONTACT.map((item) => (
                 <li key={item.id}>
                   <a
-                    href={item.href || undefined}
+                    href={item.href || "#"}
                     target={item.href ? "_blank" : "_self"}
                     rel="noopener noreferrer"
                     title={"Ir a " + (item.title ?? item.label)}
