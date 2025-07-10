@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 export const LIKS_CONTACT = [
   {
     id: "wp",
-    href: "#",
+    href: "https://api.whatsapp.com/send?phone=543813545903",
     label: "WhatsApp",
     icon: WhatsAppIcon,
   },
@@ -30,25 +30,25 @@ export const LIKS_CONTACT = [
   },
 ];
 
-export const LINKS_NAV = [
-  {
-    id: "sobremi",
-    label: "Sobre Mi",
+export const LINKS_NAV_KEYS = ["sobremi", "trabajos", "servicios", "contacto"];
+
+export const FONTS_VALUES = {
+  md: {
+    common: "medium",
+    subtext: "small",
+    h1: "x-large",
+    h2: "large",
   },
-  {
-    id: "trabajos",
-    label: "Trabajos",
+  lg: {
+    common: "large",
+    subtext: "medium",
+    h1: "xx-large",
+    h2: "x-large",
   },
-  {
-    id: "servicios",
-    label: "Servicios",
+  xl: {
+    common: "x-large",
+    subtext: "large",
+    h1: "xxx-large",
+    h2: "xx-large",
   },
-  // {
-  //   id: "habilidades",
-  //   label: "Habilidades",
-  // },
-  {
-    id: "contacto",
-    label: "Contacto",
-  },
-];
+};

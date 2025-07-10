@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { IconButton, Modal, useMediaQuery } from "@mui/material";
 
 import Image from "../../components/Image";
 
+const ns = "servicios";
 const images_all_test = import.meta.glob(
   "../../assets/imgs/servicios/**/*.{png,jpg,jpeg,svg,webp}",
   {
@@ -20,6 +22,7 @@ const path_chevron_t = "M6 15 l6 -6 6 6";
 const path_chevron_b = "M6 9 l6 6 6 -6";
 
 export default function StackImgs({ id = "" }) {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
   const [selected, setSelected] = useState<number | undefined>(undefined);
   const isSmall = useMediaQuery("(max-width: 640px)");
@@ -47,7 +50,7 @@ export default function StackImgs({ id = "" }) {
         <IconButton
           color="inherit"
           className="!border-4 !border-emerald-400"
-          title={expanded ? "Retraer" : "Expander"}
+          title={expanded ? t("retract", { ns: ns }) : t("expand", { ns: ns })}
           onClick={() => setExpanded(!expanded)}
         >
           <motion.svg
@@ -126,7 +129,7 @@ export default function StackImgs({ id = "" }) {
                   src={item}
                   width={150}
                   height={150}
-                  alt={"Imagen de ejemplo " + i}
+                  alt={t("img_of_example") + " " + i}
                   className="object-cover h-full scale-[2] hover:scale-[1.5] transition-transform"
                   classes={{ wrapper: "h-full" }}
                 />
@@ -149,7 +152,7 @@ export default function StackImgs({ id = "" }) {
                 src={imgsFull[selected]}
                 width={960}
                 height={900}
-                alt={"Imagen de ejemplo " + selected}
+                alt={t("img_of_example") + " " + selected}
                 className="w-auto max-w-none"
                 classes={{
                   wrapper: "m-auto",

@@ -2,6 +2,11 @@
 
 @theme {
   --breakpoint-xs: 360px;
+
+  --text-common: medium;
+  --text-subtext: small;
+  --text-h1: x-large;
+  --text-h2: large;
 }
 
 html {

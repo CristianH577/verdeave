@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-src/assets/imgs/test/*
+src/assets/imgs/test
 src/components/Component.tsx
-z/*
+z

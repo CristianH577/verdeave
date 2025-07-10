@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-import { LIKS_CONTACT, LINKS_NAV } from "../const/siteConfig";
+import { LIKS_CONTACT, LINKS_NAV_KEYS } from "../const/siteConfig";
 
 import { Divider } from "@mui/material";
 
@@ -17,11 +18,14 @@ const motion_variant_article = {
   visible: { opacity: 1, x: 0 },
 };
 
+const ns = "footer";
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer
       id="contacto"
-      className="shadow-inner bg-gradient-to-b from-emerald-400 to-emerald-600 z-10"
+      className="shadow-inner bg-gradient-to-b from-emerald-400 to-emerald-600 z-10 text-common"
     >
       <motion.div
         className="w-full max-w-[900px] p-4 flex flex-col gap-4 place-self-center"
@@ -46,20 +50,20 @@ export default function Footer() {
 
         <section className="flex flex-col-reverse max-sm:text-center sm:flex-row gap-4 sm:gap-6 sm:self-center">
           <motion.article variants={motion_variant_article}>
-            <b>Secciones</b>
+            <b>{t("sections", { ns: ns })}</b>
 
             <ul>
-              {LINKS_NAV.map(
-                (item) =>
-                  item.id !== "contacto" && (
-                    <li key={item.id}>
+              {LINKS_NAV_KEYS.map(
+                (id) =>
+                  id !== "contacto" && (
+                    <li key={id}>
                       <a
-                        href={"#" + item.id}
+                        href={"#" + id}
                         target="_self"
-                        title={"Ir a " + item.label}
+                        title={t("go_to") + t(id, { ns: "links_nav" })}
                         className="inline-flex items-center gap-1 hover:underline"
                       >
-                        {item.label}
+                        {t(id, { ns: "links_nav" })}
                       </a>
                     </li>
                   )
@@ -75,7 +79,7 @@ export default function Footer() {
           />
 
           <motion.article variants={motion_variant_article}>
-            <b>Contacto</b>
+            <b>{t("contact", { ns: ns })}</b>
 
             <ul>
               {LIKS_CONTACT.map((item) => (
@@ -105,16 +109,6 @@ export default function Footer() {
             orientation="vertical"
             flexItem
           />
-
-          {/* <MotionImage
-            src={qrWp}
-            width={150}
-            height={150}
-            alt="QR al chat de WhatsApp"
-            className="border-3 border-black rounded-lg p-1"
-            classes={{ wrapper: "self-center" }}
-            variants={motion_variant_article}
-          /> */}
 
           <motion.div
             className="self-center border-3 border-black rounded-lg p-1"
@@ -160,12 +154,12 @@ export default function Footer() {
         <Divider variant="middle" className="bg-neutral-300" />
 
         <p className="text-neutral-300 text-center">
-          2025 - Diseñado por{" "}
+          2025 - {t("design_for", { ns: ns })}
           <a
             href="https://github.com/CristianH577"
             target="_blank"
             rel="noopener noreferrer"
-            title="Ir al perfil de Github"
+            title={t("go_to_creator_site", { ns: ns })}
             className="text-inherit hover:underline"
           >
             <span className="font-mono">©</span>

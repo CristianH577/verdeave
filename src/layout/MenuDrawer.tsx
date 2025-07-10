@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
-import { LINKS_NAV } from "../const/siteConfig";
+import { LINKS_NAV_KEYS } from "../const/siteConfig";
 
 import { Button, Divider, Drawer } from "@mui/material";
 
@@ -20,7 +21,9 @@ const variants_li = {
   visible: { opacity: 1, x: 0 },
 };
 
-export default function MovilMenu({ isOpen = false, setIsOpen }: Props) {
+const ns = "menu_nav";
+export default function MenuDrawer({ isOpen = false, setIsOpen }: Props) {
+  const { t } = useTranslation();
   const onClose = () => setIsOpen(false);
 
   return (
@@ -34,7 +37,7 @@ export default function MovilMenu({ isOpen = false, setIsOpen }: Props) {
     >
       <a
         href="#"
-        title="Ir al inicio"
+        title={t("go_to_home", { ns: ns })}
         className="inline-flex items-center gap-1 text-emerald-200 font-semibold text-3xl drop-shadow-sm drop-shadow-black/60 py-4 px-2"
       >
         <Image width={48} height={48} />
@@ -57,17 +60,17 @@ export default function MovilMenu({ isOpen = false, setIsOpen }: Props) {
         initial="hidden"
         animate="visible"
       >
-        {LINKS_NAV.map((link) => (
-          <motion.li key={link.id} className={class_li} variants={variants_li}>
+        {LINKS_NAV_KEYS.map((id) => (
+          <motion.li key={id} className={class_li} variants={variants_li}>
             <Button
               component="a"
-              href={"#" + link.id}
-              title={"Ir a " + link.label}
+              href={"#" + id}
+              title={t("go_to") + t(id, { ns: "links_nav" })}
               size="large"
-              className="!px-4 font-semibold w-full !text-white !normal-case !justify-start"
+              className="!px-4 font-semibold w-full !text-white !normal-case !justify-start !text-common"
               onClick={onClose}
             >
-              {link.label}
+              {t(id, { ns: "links_nav" })}
             </Button>
           </motion.li>
         ))}
@@ -77,12 +80,12 @@ export default function MovilMenu({ isOpen = false, setIsOpen }: Props) {
           variants={variants_li}
         >
           <Button
-            className="!px-4 font-semibold w-full !text-inherit !normal-case !justify-start"
-            title="Cerrar menú"
+            className="!px-4 font-semibold w-full !text-inherit !normal-case !justify-start !text-common"
+            title={t("close_menu", { ns: ns })}
             onClick={() => setIsOpen(false)}
             startIcon={<ArrowBackIcon />}
           >
-            Cerrar
+            {t("close", { ns: ns })}
           </Button>
         </motion.li>
       </motion.ul>

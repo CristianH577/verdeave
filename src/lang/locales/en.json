@@ -1,0 +1,280 @@
+{
+  "common": {
+    "show_more": "See more",
+    "logo_of": "Logo of ",
+    "go_to": "Go to ",
+    "go_to_site": "Go to site",
+    "example": "Example",
+    "show_example": "See example",
+    "img_of_example": "Image of example"
+  },
+
+  "menu_nav": {
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "go_to_home": "Go to home",
+    "close": "Close",
+    "configs_label": "Configurations",
+    "swith-theme": "Change theme",
+    "swith-lang": "Change language",
+    "swith-text": "Change font size"
+  },
+
+  "links_nav": {
+    "sobremi": "About",
+    "trabajos": "Jobs",
+    "servicios": "Services",
+    "contacto": "Contact"
+  },
+
+  "footer": {
+    "sections": "Sections",
+    "contact": "Contact",
+    "design_for": "Designed by ",
+    "go_to_creator_site": "Go to Github profile"
+  },
+  "sobremi": {
+    "servicios": "services",
+    "h2": "I like to make things simple, optimal and functional.",
+    "p": "I work mainly in front-end but also back-end development, with a commercial focus."
+  },
+  "trabajos": {
+    "rol": "Role/Contribution",
+    "categories": { "web_app": "Web App", "landing": "Landing Page" },
+    "imanes_tucuman": {
+      "desc": "Site for a commercial venture selling magnets",
+      "rol": "Creator"
+    },
+    "catalog": {
+      "desc": "Diseño web para catálogos estáticos de negocios",
+      "rol": "Creator"
+    },
+    "abel_urbano": {
+      "desc": "Landing page para estilista local",
+      "rol": "Creator"
+    }
+  },
+  "servicios": {
+    "prices_alert": "Prices may change",
+    "tab_aria_label": "services tabs",
+    "expand": "Expand",
+    "retract": "Retract",
+    "items": {
+      "web": {
+        "label": "Web design",
+        "text_content": [
+          "A website is a great way to showcase content and reach your audience. It creates a more focused online presence, making it easier for search engines to link users to your content. It also gives a more professional and trustworthy image"
+        ],
+        "listas": [
+          {
+            "label": "Landing page",
+            "items": [
+              "Responsive design",
+              "Fast loading",
+              "Optimized images",
+              "SEO application",
+              "Spelling check",
+              "Custom color palette",
+              "Modular structure",
+              "Easy to understand code",
+              "Basic animations",
+              "Free hosting",
+              "Basic logo",
+              "Error prevention"
+            ]
+          },
+          {
+            "label": "+Plus",
+            "items": [
+              "Additional Pages",
+              "Custom Design",
+              "Fast Loading",
+              "Optimized Images",
+              "Spell Check",
+              "Custom Color Palette",
+              "Animations",
+              "Graphic Design",
+              "Custom Domain",
+              "Advanced Animations",
+              "Dark Mode",
+              "Multilingual/Internationalization"
+            ]
+          },
+          {
+            "label": "Price",
+            "items": [
+              "Landing page: $100,000",
+              "Additional if you need anything else from the +Plus list",
+              "Advance of $10,000 and cancellation upon completion"
+            ]
+          }
+        ]
+      },
+      "catalogo": {
+        "label": "Online Catalog",
+        "text_content": [
+          "If you're looking for something less complicated than an online store, and a website is too much, an online catalog is a simple and quick option for showcasing products and services",
+          "This makes it easier for customers to understand what you offer and find what they want if you have a wide variety of items; in addition to being listed on search engines"
+        ],
+        "listas": [
+          {
+            "label": "Basic",
+            "items": [
+              "Responsive Design",
+              "Search System",
+              "Shopping Cart",
+              "SEO App",
+              "Quick Deployment",
+              "Custom Color",
+              "Network Inclusion",
+              "WhatsApp Link to Complete the Sale",
+              "Free Hosting",
+              "Unlimited Items"
+            ]
+          },
+          {
+            "label": "+Plus",
+            "items": [
+              "Custom Design",
+              "Fast Loading",
+              "Optimized Images",
+              "Spell Check",
+              "Custom Color Palette",
+              "Animations",
+              "Graphic Design",
+              "Post-Update/Modify",
+              "Custom Domain",
+              "FAQ Section"
+            ]
+          },
+          {
+            "label": "Not included",
+            "items": [
+              "Dynamic site (the website is static)",
+              "Payment system",
+              "Administration system"
+            ]
+          },
+          {
+            "label": "What do you need?",
+            "items": [
+              "Fill out an Excel spreadsheet with the item information",
+              "A folder with the item images",
+              "Business information: name, address, networks, hours, etc.",
+              "Wait 1 to 3 days to set up the catalog"
+            ]
+          },
+          {
+            "label": "Price",
+            "items": [
+              "Basic: $45,000",
+              "Advance of $5,000 and cancellation upon completion",
+              "Additional if you need anything else from the +Plus list"
+            ]
+          }
+        ]
+      },
+      "tienda": {
+        "label": "Online Store",
+        "text_content": [
+          "If you want a retail website that you can manage and control, it's best to use an existing service that only involves customizing and uploading items (Empretienda, Tienda Nube, Mercado Shops, Woo Commerce, etc.)",
+          "Unlike a website from scratch, this saves you the cost of website structure, database design, personal server costs, and more; and unlike an online catalog, here you can manage the content directly. Additionally, the services usually include a payment system, ordering, history, etc"
+        ],
+        "listas": [
+          {
+            "label": "Basic",
+            "items": [
+              "Account Creation",
+              "Article Upload (up to 50)",
+              "Basic Page Design",
+              "Business Information Upload",
+              "Networking",
+              "Basic Tutorial",
+              "FAQ Section"
+            ]
+          },
+          {
+            "label": "+Plus",
+            "items": [
+              "Custom Design",
+              "Fast Loading",
+              "Optimized Images",
+              "Spell Check",
+              "Custom Color Palette",
+              "Animations",
+              "Graphic Design",
+              "Custom Domain"
+            ]
+          },
+          {
+            "label": "What do you need?",
+            "items": [
+              "Item details: name, price, category, etc.",
+              "Item images",
+              "Business details: name, address, networks, hours, etc.",
+              "Please allow 1 to 5 days for page setup"
+            ]
+          },
+          {
+            "label": "Price",
+            "items": [
+              "Basic: $55,000",
+              "Advance of $10,000 and cancellation upon completion",
+              "Additional if you need anything else from the +Plus list",
+              "Please note that stores have a separate monthly fee"
+            ]
+          }
+        ]
+      },
+      "catalogo_pdf": {
+        "label": "PDF Catalog",
+        "text_content": [
+          "A quick and affordable way to showcase a sample of what's on offer with a text-based search system"
+        ],
+        "listas": [
+          {
+            "label": "Basic",
+            "items": [
+              "Basic Design",
+              "Basic Cover",
+              "Table of Contents",
+              "Contacts",
+              "Upload up to 35 articles",
+              "Up to 120 articles by filling out an Excel spreadsheet",
+              "Individual page images",
+              "Common version, HD and OCR"
+            ]
+          },
+          {
+            "label": "+Plus",
+            "items": [
+              "Custom Design",
+              "Clear Image Background",
+              "Spell Check",
+              "Custom Color Palette",
+              "Graphic Design",
+              "Additional Pages (clarifications, terms and conditions, FAQs, etc.)"
+            ]
+          },
+          {
+            "label": "What do you need?",
+            "items": [
+              "Item details or fill out an Excel spreadsheet",
+              "A folder with item images",
+              "Business details: name, address, networks, hours, etc.",
+              "Allow 1 to 3 days to design the catalog"
+            ]
+          },
+          {
+            "label": "Price",
+            "items": [
+              "Basic: $20,000",
+              "Advance of $5,000 and cancellation upon completion",
+              "Additional if you need anything else from the +Plus list"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

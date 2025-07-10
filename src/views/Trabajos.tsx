@@ -1,30 +1,23 @@
 import { useState } from "react";
 
+import { LOGOS_PROGRAMACION } from "../const/svgs";
+
 import { motion, AnimatePresence } from "framer-motion";
-import { Button, IconButton, Modal } from "@mui/material";
+import { Button, Modal } from "@mui/material";
 
 import Image from "../components/Image";
 
-import AbcIcon from "@mui/icons-material/Abc";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-
-import {
-  SvgLogoFramerMotion,
-  SvgLogoReact,
-  SvgLogoTailwindCss,
-  SvgLogoTs,
-} from "../assets/svgs/svgsLogos";
+import { useTranslation } from "react-i18next";
 
 type TypeCard = {
   id: string;
-  categoria: string;
   label: string;
   year: string;
   href: string;
   bg?: string;
-  desc: string;
-  rol: string;
   tecnologias: string[];
+  categorie: "web_app" | "landing";
 };
 
 const images_all = import.meta.glob(
@@ -36,61 +29,32 @@ const images_all = import.meta.glob(
 );
 const srcs = Object.entries(images_all) as string[][];
 
-const logos = {
-  default: {
-    icon: AbcIcon,
-    label: "Logo",
-  },
-  react: {
-    icon: SvgLogoReact,
-    label: "React",
-  },
-  ts: {
-    icon: SvgLogoTs,
-    label: "TypeScript",
-  },
-  framerMotion: {
-    icon: SvgLogoFramerMotion,
-    label: "Framer Motion",
-  },
-  tailwind: {
-    icon: SvgLogoTailwindCss,
-    label: "TailwindCss",
-  },
-};
-
-const items = [
+const trabajos: TypeCard[] = [
   {
     id: "imanes_tucuman",
-    categoria: "App Web",
+    categorie: "web_app",
     label: "Imanes Tucuman",
-    year: "2025",
+    year: "2024",
     href: "https://imanestucuman.com.ar/",
     bg: "bg-gradient-to-b from-[rgb(45,49,119)] to-[#202355]",
-    desc: "Sitio para un emprendimiento comercial de ventas de imanes",
-    rol: "Creador",
     tecnologias: ["react", "ts", "framerMotion", "tailwind"],
   },
   {
     id: "catalog",
-    categoria: "App Web",
+    categorie: "web_app",
     label: "CataLog",
     year: "2025",
     href: "https://cata-log.netlify.app/",
     bg: "bg-gradient-to-t from-[#1565C0] to-[#1E88E5]",
-    desc: "Diseño web para catálogos estáticos de negocios",
-    rol: "Creador",
     tecnologias: ["react", "ts", "framerMotion", "tailwind"],
   },
   {
     id: "abel_urbano",
-    categoria: "Landing page",
+    categorie: "landing",
     label: "Abel Urbano",
     year: "2025",
     href: "https://abel-urbano.vercel.app/",
     bg: "!bg-black",
-    desc: "Landing page para estilista local",
-    rol: "Creador",
     tecnologias: ["react", "ts", "framerMotion", "tailwind"],
   },
 ];
@@ -98,7 +62,10 @@ const items = [
 const MotionButton = motion.create(Button);
 const MotionImage = motion.create(Image);
 
+const ns = "trabajos";
 export default function Trabajos() {
+  const { t } = useTranslation();
+
   const [selected, setSelected] = useState<TypeCard | null>(null);
 
   return (
@@ -113,7 +80,7 @@ export default function Trabajos() {
         initial="hidden"
         animate="visible"
       >
-        {items.map((item) => (
+        {trabajos.map((item) => (
           <MotionButton
             key={item.id}
             layoutId={item.id}
@@ -122,7 +89,7 @@ export default function Trabajos() {
               "p-4 h-[240px] rounded-lg shadow-md shadow-black/50" +
               (item.bg ? " " + item.bg : "")
             }
-            title="Ver más"
+            title={t("show_more")}
             variants={{
               hidden: { opacity: 0, scale: 0 },
               visible: { opacity: 1, scale: 1 },
@@ -134,7 +101,7 @@ export default function Trabajos() {
               src={srcs.find(([path, _]) => path.includes(`/${item.id}`))?.[1]}
               width={240}
               height={100}
-              alt={"Logo de " + item.label}
+              alt={t("logo_of") + item.label}
               className="w-full max-w-[240px]"
               classes={{ wrapper: "self-center" }}
               initial={{ scale: 0 }}
@@ -160,7 +127,7 @@ export default function Trabajos() {
             >
               <div
                 className={
-                  "p-4 w-full max-w-[360px] xs:rounded-lg shadow-md shadow-black flex flex-col justify-around my-[25vh]" +
+                  "p-4 w-full max-w-[26em] xs:rounded-lg shadow-md shadow-black flex flex-col justify-around my-[25vh]" +
                   (selected.bg ? " " + selected.bg : "")
                 }
               >
@@ -172,7 +139,7 @@ export default function Trabajos() {
                   }
                   width={240}
                   height={100}
-                  alt={"Logo de " + selected.label}
+                  alt={t("logo_of") + selected.label}
                   className="w-full"
                   classes={{ wrapper: "self-center" }}
                   initial={{ y: 50 }}
@@ -181,51 +148,49 @@ export default function Trabajos() {
                 />
 
                 <motion.div
-                  className="p-4"
+                  className="p-4 text-common"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: "easeIn" }}
                 >
                   <span className="font-semibold text-neutral-300">
-                    {selected.categoria}
+                    {t("categories." + selected.categorie, { ns: ns })}
                   </span>
                   <h2>
                     <a
                       href={selected.href ?? "#"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Ir al sitio"
-                      className="text-xl hover:underline"
+                      title={t("go_to_site")}
+                      className="text-h2 hover:underline"
                     >
                       <b>{selected.label}</b> <OpenInNewIcon fontSize="small" />
                     </a>{" "}
-                    <span className="text-sm text-neutral-300">
+                    <span className="text-subtext text-neutral-300">
                       {selected.year}
                     </span>
                   </h2>
 
-                  <span className="text-sm text-neutral-300">
-                    Rol/Aporte: {selected.rol}
+                  <span className="text-subtext text-neutral-300">
+                    {t("rol", { ns: ns })}:{" "}
+                    {t(selected.id + ".rol", { ns: ns })}
                   </span>
 
-                  <p>{selected.desc}.</p>
+                  <p>{t(selected.id + ".desc", { ns: ns })}.</p>
 
-                  <div className="flex flex-wrap gap-2 my-1 drop-shadow-sm drop-shadow-black/80">
+                  <div className="flex flex-wrap gap-4 my-2 drop-shadow-sm drop-shadow-black/80">
                     {selected.tecnologias &&
                       selected.tecnologias.map((item) => {
                         const logo =
-                          logos[item as keyof typeof logos] ?? logos.default;
+                          LOGOS_PROGRAMACION[
+                            item as keyof typeof LOGOS_PROGRAMACION
+                          ];
                         const Svg = logo.icon;
 
                         return (
-                          <IconButton
-                            key={item}
-                            size="small"
-                            className="hover:!bg-transparent"
-                            title={logo.label}
-                          >
+                          <span key={item} title={logo.label}>
                             <Svg height={16} />
-                          </IconButton>
+                          </span>
                         );
                       })}
                   </div>
