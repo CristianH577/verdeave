@@ -10,7 +10,6 @@ type TypeConfigs = {
   font: string;
   lang: string;
 };
-type TypeFontValue = keyof typeof FONTS_VALUES;
 
 export function useConfigs() {
   const { setMode } = useColorScheme();
@@ -36,7 +35,8 @@ export function useConfigs() {
   };
 
   const handleChangeFont = (configs_: TypeConfigs) => {
-    const font_values = FONTS_VALUES[configs_.font as TypeFontValue];
+    const font_values =
+      FONTS_VALUES[configs_.font as keyof typeof FONTS_VALUES];
 
     Object.entries(font_values).forEach(([key, val]) => {
       document.documentElement.style.setProperty("--text-" + key, val);

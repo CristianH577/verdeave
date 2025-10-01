@@ -1,6 +1,6 @@
 {
   "common": {
-    "show_more": "See more",
+    "show_details": "See details",
     "logo_of": "Logo of ",
     "go_to": "Go to ",
     "go_to_site": "Go to site",
@@ -51,6 +51,10 @@
     },
     "abel_urbano": {
       "desc": "Landing page para estilista local",
+      "rol": "Creator"
+    },
+    "tucumercio": {
+      "desc": "Web app to display and find businesses in the province of Tucumán",
       "rol": "Creator"
     }
   },
@@ -110,7 +114,7 @@
           }
         ]
       },
-      "catalogo": {
+      "catalogo_web": {
         "label": "Online Catalog",
         "text_content": [
           "If you're looking for something less complicated than an online store, and a website is too much, an online catalog is a simple and quick option for showcasing products and services",

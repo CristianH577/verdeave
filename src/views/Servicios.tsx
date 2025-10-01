@@ -6,13 +6,13 @@ import { Button } from "@mui/material";
 
 import TabPanelServicio from "./Servicios/TabPanelServicio";
 
-const items = [
+const tabs = [
   {
     id: "web",
     linkExample: "https://imanestucuman.com.ar/",
   },
   {
-    id: "catalogo",
+    id: "catalogo_web",
     linkExample: "https://cata-log.netlify.app/",
   },
   {
@@ -29,7 +29,7 @@ const items = [
 const ns = "servicios";
 export default function Servicios() {
   const { t } = useTranslation();
-  const [value, setValue] = useState(0);
+  const [tabIdxSelected, setTabIdxSelected] = useState(0);
 
   return (
     <section id="servicios" className="view-section">
@@ -40,18 +40,19 @@ export default function Servicios() {
       <article className="border-b border-neutral-400 overflow-x-auto pb-1">
         <motion.ul
           aria-label={t("tab_aria_label", { ns: ns })}
-          className="flex w-fit relative"
+          className="flex w-fit gap-2 relative"
         >
-          {items.map((item, i) => (
+          {tabs.map((item, i) => (
             <li key={i}>
               <Button
                 color="inherit"
                 size="large"
-                data-selected={i === value}
-                className="whitespace-nowrap data-[selected=true]:!font-semibold data-[selected=true]:text-shadow-md text-shadow-black/30 !text-common"
-                onClick={() => setValue(i)}
+                data-selected={i === tabIdxSelected}
+                className="whitespace-nowrap data-[selected=true]:!font-semibold data-[selected=true]:text-shadow-md text-shadow-black/30 !text-common hover:!font-bold"
+                title={t("show_details")}
+                onClick={() => setTabIdxSelected(i)}
               >
-                {value === i && (
+                {tabIdxSelected === i && (
                   <motion.div
                     layoutId="highlight"
                     className="absolute right-0 bottom-0 rounded-sm w-full h-full bg-gradient-to-t from-emerald-600 to-emerald-400"
@@ -68,7 +69,7 @@ export default function Servicios() {
 
       <AnimatePresence mode="wait">
         <motion.article
-          key={value}
+          key={tabIdxSelected}
           layoutId="content"
           className="py-4 sm:px-4 text-common"
           initial={{ x: "100%", opacity: 0 }}
@@ -76,7 +77,7 @@ export default function Servicios() {
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <TabPanelServicio {...items[value]} />
+          <TabPanelServicio {...tabs[tabIdxSelected]} />
         </motion.article>
       </AnimatePresence>
     </section>

@@ -18,6 +18,8 @@ type TypeCard = {
   bg?: string;
   tecnologias: string[];
   categorie: "web_app" | "landing";
+  subtitleColor?: string;
+  textColor?: string;
 };
 
 const images_all = import.meta.glob(
@@ -57,6 +59,17 @@ const trabajos: TypeCard[] = [
     bg: "!bg-black",
     tecnologias: ["react", "ts", "framerMotion", "tailwind"],
   },
+  {
+    id: "tucumercio",
+    categorie: "web_app",
+    label: "Tucumercio",
+    year: "2025",
+    href: "https://tucumercio.netlify.app/",
+    bg: "!bg-[rgb(253,203,47)]",
+    subtitleColor: "text-neutral-500",
+    textColor: "black",
+    tecnologias: ["react", "ts", "framerMotion", "tailwind"],
+  },
 ];
 
 const MotionButton = motion.create(Button);
@@ -89,7 +102,7 @@ export default function Trabajos() {
               "p-4 h-[240px] rounded-lg shadow-md shadow-black/50" +
               (item.bg ? " " + item.bg : "")
             }
-            title={t("show_more")}
+            title={t("show_details")}
             variants={{
               hidden: { opacity: 0, scale: 0 },
               visible: { opacity: 1, scale: 1 },
@@ -122,7 +135,10 @@ export default function Trabajos() {
           >
             <motion.div
               layoutId={selected.id}
-              className="text-white justify-self-center"
+              className={
+                "justify-self-center " +
+                (selected.textColor ? selected.textColor : "text-white")
+              }
               onClick={() => setSelected(null)}
             >
               <div
@@ -153,7 +169,14 @@ export default function Trabajos() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: "easeIn" }}
                 >
-                  <span className="font-semibold text-neutral-300">
+                  <span
+                    className={
+                      "font-semibold " +
+                      (selected.subtitleColor
+                        ? selected.subtitleColor
+                        : "text-neutral-300")
+                    }
+                  >
                     {t("categories." + selected.categorie, { ns: ns })}
                   </span>
                   <h2>
@@ -166,19 +189,33 @@ export default function Trabajos() {
                     >
                       <b>{selected.label}</b> <OpenInNewIcon fontSize="small" />
                     </a>{" "}
-                    <span className="text-subtext text-neutral-300">
+                    <span
+                      className={
+                        "text-subtext " +
+                        (selected.subtitleColor
+                          ? selected.subtitleColor
+                          : "text-neutral-300")
+                      }
+                    >
                       {selected.year}
                     </span>
                   </h2>
 
-                  <span className="text-subtext text-neutral-300">
+                  <span
+                    className={
+                      "text-subtext " +
+                      (selected.subtitleColor
+                        ? selected.subtitleColor
+                        : "text-neutral-300")
+                    }
+                  >
                     {t("rol", { ns: ns })}:{" "}
                     {t(selected.id + ".rol", { ns: ns })}
                   </span>
 
                   <p>{t(selected.id + ".desc", { ns: ns })}.</p>
 
-                  <div className="flex flex-wrap gap-4 my-2 drop-shadow-sm drop-shadow-black/80">
+                  <div className="flex flex-wrap gap-4 my-2 drop-shadow-sm drop-shadow-black/50">
                     {selected.tecnologias &&
                       selected.tecnologias.map((item) => {
                         const logo =

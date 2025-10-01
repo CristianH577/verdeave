@@ -7,14 +7,14 @@ import { IconButton, Modal, useMediaQuery } from "@mui/material";
 import Image from "../../components/Image";
 
 const ns = "servicios";
-const images_all_test = import.meta.glob(
+const images_all = import.meta.glob(
   "../../assets/imgs/servicios/**/*.{png,jpg,jpeg,svg,webp}",
   {
     eager: true,
     import: "default",
   }
 );
-const srcs = Object.entries(images_all_test) as string[][];
+const srcs = Object.entries(images_all) as string[][];
 
 const path_chevron_l = "M15 18 l-6 -6 6 -6";
 const path_chevron_r = "M9 6 l6 6 -6 6";

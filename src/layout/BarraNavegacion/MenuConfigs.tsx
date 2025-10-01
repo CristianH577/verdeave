@@ -66,8 +66,8 @@ export default function MenuConfigs() {
           className="uppercase !font-bold !justify-around"
           onClick={configs.switch.lang}
         >
-          {configs.value.lang}
           <SVGFlag width={20} />
+          {configs.value.lang}
         </MenuItem>
 
         <MenuItem

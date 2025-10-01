@@ -1,6 +1,6 @@
 {
   "common": {
-    "show_more": "Ver más",
+    "show_details": "Ver detalles",
     "logo_of": "Logo de ",
     "go_to": "Ir a ",
     "go_to_site": "Ir al sitio",
@@ -51,6 +51,10 @@
     },
     "abel_urbano": {
       "desc": "Landing page para estilista local",
+      "rol": "Creador"
+    },
+    "tucumercio": {
+      "desc": "Web app para mostrar y encontrar negocios en la provincia de Tucumán",
       "rol": "Creador"
     }
   },
@@ -110,7 +114,7 @@
           }
         ]
       },
-      "catalogo": {
+      "catalogo_web": {
         "label": "Catalogo Online",
         "text_content": [
           "Si busca algo menos complicado que una tienda online y una web es demasiado, un catalogo online es una opción sencilla y rápida para mostrar productos y servicios",
@@ -239,7 +243,7 @@
               "Portada básica",
               "Índice",
               "Contactos",
-              "Carga de hasta 35 artículos",
+              "Carga de hasta 20 artículos",
               "Hasta 120 artículos rellenando un excel",
               "Imágenes individuales de las paginas",
               "Versión común, HD y OCR"
@@ -268,8 +272,8 @@
           {
             "label": "Precio",
             "items": [
-              "Básico: $20.000",
-              "Adelanto de $5.000 y cancelación al finalizar",
+              "Básico: $5.000",
+              "Adelanto de $2.000 y cancelación al finalizar",
               "Adicional si precisa algo mas de la lista de +Plus"
             ]
           }
