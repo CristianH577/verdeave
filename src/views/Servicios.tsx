@@ -48,7 +48,7 @@ export default function Servicios() {
                 color="inherit"
                 size="large"
                 data-selected={i === tabIdxSelected}
-                className="whitespace-nowrap data-[selected=true]:!font-semibold data-[selected=true]:text-shadow-md text-shadow-black/30 !text-common hover:!font-bold"
+                className="whitespace-nowrap !font-semibold data-[selected=true]:text-shadow-md text-shadow-black/30 !text-common hover:!text-emerald-300"
                 title={t("show_details")}
                 onClick={() => setTabIdxSelected(i)}
               >

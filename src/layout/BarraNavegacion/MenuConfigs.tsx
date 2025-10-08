@@ -40,6 +40,7 @@ export default function MenuConfigs() {
         aria-expanded={open ? "true" : undefined}
         title={t("configs_label", { ns: ns })}
         onClick={handleClick}
+        sx={{ color: "white", "&:hover": { color: "var(--color-red-400)" } }}
       >
         <SettingsIcon fontSize="inherit" />
       </IconButton>

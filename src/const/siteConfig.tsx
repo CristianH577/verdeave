@@ -52,3 +52,10 @@ export const FONTS_VALUES = {
     h2: "xx-large",
   },
 };
+
+export const OBJ_PRICES = {
+  web: 100000,
+  catalogo_web: 45000,
+  tienda: 55000,
+  catalogo_pdf: 6000,
+};

@@ -33,11 +33,13 @@
     "design_for": "Diseñado por ",
     "go_to_creator_site": "Ir al perfil de Github"
   },
+
   "sobremi": {
     "servicios": "servicios",
     "h2": "Me gusta hacer las cosas simples, optimas y funcionales.",
     "p": "Trabajo principalmente en front-end pero tambien desarrollo backend, con orientacion comercial."
   },
+
   "trabajos": {
     "rol": "Rol/Aporte",
     "categories": { "web_app": "App Web", "landing": "Landing Page" },
@@ -58,11 +60,18 @@
       "rol": "Creador"
     }
   },
+
   "servicios": {
     "prices_alert": "Los precios pueden variar",
     "tab_aria_label": "pestañas de servicios",
     "expand": "Expandir",
     "retract": "Retraer",
+    "prices": {
+      "label": "Precio",
+      "basico": "Básico: {{cost}}",
+      "adelanto": "Adelanto del 10% y cancelación al finalizar",
+      "adicional": "Adicional si precisa algo mas de la lista de +Plus"
+    },
     "items": {
       "web": {
         "label": "Diseño web",
@@ -102,14 +111,6 @@
               "Animaciones avanzadas",
               "Modo oscuro",
               "Multilenguaje/internacionalización"
-            ]
-          },
-          {
-            "label": "Precio",
-            "items": [
-              "Landing page: $100.000",
-              "Adicional si precisa algo mas de la lista de +Plus",
-              "Adelanto de $10.000 y cancelación al finalizar"
             ]
           }
         ]
@@ -167,14 +168,6 @@
               "Los datos del negocio: nombre, dirección, redes, horarios, etc.",
               "Esperar 1 a 3 días para configurar el catalogo"
             ]
-          },
-          {
-            "label": "Precio",
-            "items": [
-              "Basico: $45.000",
-              "Adelanto de $5.000 y cancelación al finalizar",
-              "Adicional si precisa algo mas de la lista de +Plus"
-            ]
           }
         ]
       },
@@ -218,15 +211,6 @@
               "Los datos del negocio: nombre, dirección, redes, horarios, etc.",
               "Esperar 1 a 5 días para configurar la pagina"
             ]
-          },
-          {
-            "label": "Precio",
-            "items": [
-              "Básico: $55.000",
-              "Adelanto de $10.000 y cancelación al finalizar",
-              "Adicional si precisa algo mas de la lista de +Plus",
-              "Tenga en cuenta que las tiendas tienen un coste mensual aparte"
-            ]
           }
         ]
       },
@@ -240,20 +224,20 @@
             "label": "Básico",
             "items": [
               "Diseño básico",
-              "Portada básica",
-              "Índice",
               "Contactos",
               "Carga de hasta 20 artículos",
-              "Hasta 120 artículos rellenando un excel",
+              "Hasta 80 artículos rellenando un excel",
               "Imágenes individuales de las paginas",
-              "Versión común, HD y OCR"
+              "PDF: liviano, HD y OCR"
             ]
           },
           {
             "label": "+Plus",
             "items": [
               "Diseño personalizado",
+              "Portada",
               "Limpiar fondo de imágenes",
+              "Índice",
               "Revisión ortográfica",
               "Paleta de colores personalizada",
               "Diseño grafico",
@@ -267,14 +251,6 @@
               "Una carpeta con las imágenes de los artículos",
               "Los datos del negocio: nombre, dirección, redes, horarios, etc.",
               "Esperar 1 a 3 días para diseñar el catalogo"
-            ]
-          },
-          {
-            "label": "Precio",
-            "items": [
-              "Básico: $5.000",
-              "Adelanto de $2.000 y cancelación al finalizar",
-              "Adicional si precisa algo mas de la lista de +Plus"
             ]
           }
         ]

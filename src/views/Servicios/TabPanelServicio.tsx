@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 import StackImgs from "./StackImgs";
 
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import { OBJ_PRICES } from "../../const/siteConfig";
+import { Button } from "@mui/material";
 
 const ns = "servicios";
 export default function TabPanelServicio({ id = "", linkExample = "" }) {
@@ -19,6 +21,13 @@ export default function TabPanelServicio({ id = "", linkExample = "" }) {
     returnObjects: true,
   }) as { label: string; items: string[] }[];
 
+  const cost = new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(OBJ_PRICES[id as keyof typeof OBJ_PRICES] ?? 0);
+
   return (
     <section className="space-y-8">
       <article className="max-w-[600px] indent-4">
@@ -32,16 +41,12 @@ export default function TabPanelServicio({ id = "", linkExample = "" }) {
           listas.map((list, i) => (
             <div
               key={i}
-              className={
-                ["Precio", "Price"].includes(list.label)
-                  ? "border-5 border-emerald-400 p-3 rounded-lg h-fit"
-                  : ""
-              }
+              className="bg-emerald-800/90 p-4 rounded-lg h-fit shadow-sm"
             >
               <b>{list.label}:</b>
 
               <motion.ol
-                className="list-disc list-inside"
+                className="list-disc list-inside space-y-1"
                 variants={{
                   hidden: {},
                   visible: {
@@ -68,10 +73,47 @@ export default function TabPanelServicio({ id = "", linkExample = "" }) {
               </motion.ol>
             </div>
           ))}
+
+        <div className="bg-emerald-800/90 p-4 rounded-lg h-fit shadow-sm border-5 border-emerald-400">
+          <b>{t("prices.label", { ns: "servicios" })}:</b>
+
+          <motion.ol
+            className="list-disc list-inside space-y-1"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  delayChildren: 0.1,
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+            initial="hidden"
+            animate="visible"
+          >
+            {["basico", "adelanto", "adicional"].map((li, k) => (
+              <motion.li
+                key={k}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+              >
+                {t("prices." + li, {
+                  ns: ns,
+                  cost: cost,
+                })}
+              </motion.li>
+            ))}
+          </motion.ol>
+        </div>
       </article>
 
       {linkExample && (
-        <a
+        <Button
+          variant="contained"
+          color="success"
+          component="a"
           href={linkExample}
           title={t("show_example")}
           target="_blank"
@@ -80,7 +122,7 @@ export default function TabPanelServicio({ id = "", linkExample = "" }) {
         >
           {t("example")}
           <OpenInNewIcon fontSize="small" />
-        </a>
+        </Button>
       )}
 
       <StackImgs id={id} />

@@ -63,6 +63,12 @@
     "tab_aria_label": "services tabs",
     "expand": "Expand",
     "retract": "Retract",
+    "prices": {
+      "label": "Price",
+      "basico": "Basic: {{cost}}",
+      "adelanto": "10% Advance and cancellation upon completion",
+      "adicional": "Additional if you need anything else from the +Plus list"
+    },
     "items": {
       "web": {
         "label": "Web design",
@@ -102,14 +108,6 @@
               "Advanced Animations",
               "Dark Mode",
               "Multilingual/Internationalization"
-            ]
-          },
-          {
-            "label": "Price",
-            "items": [
-              "Landing page: $100,000",
-              "Additional if you need anything else from the +Plus list",
-              "Advance of $10,000 and cancellation upon completion"
             ]
           }
         ]
@@ -167,14 +165,6 @@
               "Business information: name, address, networks, hours, etc.",
               "Wait 1 to 3 days to set up the catalog"
             ]
-          },
-          {
-            "label": "Price",
-            "items": [
-              "Basic: $45,000",
-              "Advance of $5,000 and cancellation upon completion",
-              "Additional if you need anything else from the +Plus list"
-            ]
           }
         ]
       },
@@ -218,15 +208,6 @@
               "Business details: name, address, networks, hours, etc.",
               "Please allow 1 to 5 days for page setup"
             ]
-          },
-          {
-            "label": "Price",
-            "items": [
-              "Basic: $55,000",
-              "Advance of $10,000 and cancellation upon completion",
-              "Additional if you need anything else from the +Plus list",
-              "Please note that stores have a separate monthly fee"
-            ]
           }
         ]
       },
@@ -240,20 +221,20 @@
             "label": "Basic",
             "items": [
               "Basic Design",
-              "Basic Cover",
-              "Table of Contents",
               "Contacts",
               "Upload up to 35 articles",
-              "Up to 120 articles by filling out an Excel spreadsheet",
+              "Up to 80 articles by filling out an Excel spreadsheet",
               "Individual page images",
-              "Common version, HD and OCR"
+              "PDF: light, HD y OCR"
             ]
           },
           {
             "label": "+Plus",
             "items": [
               "Custom Design",
+              "Cover",
               "Clear Image Background",
+              "Table of Contents",
               "Spell Check",
               "Custom Color Palette",
               "Graphic Design",
@@ -267,14 +248,6 @@
               "A folder with item images",
               "Business details: name, address, networks, hours, etc.",
               "Allow 1 to 3 days to design the catalog"
-            ]
-          },
-          {
-            "label": "Price",
-            "items": [
-              "Basic: $20,000",
-              "Advance of $5,000 and cancellation upon completion",
-              "Additional if you need anything else from the +Plus list"
             ]
           }
         ]
