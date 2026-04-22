@@ -6,7 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 export const LIKS_CONTACT = [
   {
     id: "wp",
-    href: "https://api.whatsapp.com/send?phone=543813545903",
+    href: "https://api.whatsapp.com/send?phone=543813156907",
     label: "WhatsApp",
     icon: WhatsAppIcon,
   },
